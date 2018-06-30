@@ -10,11 +10,13 @@ namespace UnityStandardAssets._2D
         public float lookAheadFactor = 3;
         public float lookAheadReturnSpeed = 0.5f;
         public float lookAheadMoveThreshold = 0.1f;
+        public float minimumHeight = -10f;
 
         private float m_OffsetZ;
         private Vector3 m_LastTargetPosition;
         private Vector3 m_CurrentVelocity;
         private Vector3 m_LookAheadPos;
+        private float minimumDistance;
 
         // Use this for initialization
         private void Start()
@@ -28,6 +30,7 @@ namespace UnityStandardAssets._2D
         // Update is called once per frame
         private void Update()
         {
+            minimumDistance = Mathf.Max(transform.position.x, minimumDistance);
             // only update lookahead pos if accelerating or changed direction
             float xMoveDelta = (target.position - m_LastTargetPosition).x;
 
@@ -44,6 +47,8 @@ namespace UnityStandardAssets._2D
 
             Vector3 aheadTargetPos = target.position + m_LookAheadPos + Vector3.forward*m_OffsetZ;
             Vector3 newPos = Vector3.SmoothDamp(transform.position, aheadTargetPos, ref m_CurrentVelocity, damping);
+            newPos.x = Mathf.Max(newPos.x, minimumDistance);
+            newPos.y = Mathf.Max(newPos.y, minimumHeight);
 
             transform.position = newPos;
 

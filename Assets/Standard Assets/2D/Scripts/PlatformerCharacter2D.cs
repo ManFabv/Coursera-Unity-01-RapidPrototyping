@@ -4,21 +4,22 @@ using UnityEngine;
 namespace UnityStandardAssets._2D
 {
     public class PlatformerCharacter2D : MonoBehaviour
-    {
-        [SerializeField] private float m_MaxSpeed = 10f;                    // The fastest the player can travel in the x axis.
-        [SerializeField] private float m_JumpForce = 400f;                  // Amount of force added when the player jumps.
-        [Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;  // Amount of maxSpeed applied to crouching movement. 1 = 100%
-        [SerializeField] private bool m_AirControl = false;                 // Whether or not a player can steer while jumping;
-        [SerializeField] private LayerMask m_WhatIsGround;                  // A mask determining what is ground to the character
+    { 
+        [SerializeField] private float m_MaxSpeed = 10f;
+        [SerializeField] private float m_JumpForce = 400f;
+        [Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;
+        [SerializeField] private bool m_AirControl = false;
+        public float maxVerticalVelocity = 10f;
+        public LayerMask m_WhatIsGround;
 
-        private Transform m_GroundCheck;    // A position marking where to check if the player is grounded.
-        const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
-        private bool m_Grounded;            // Whether or not the player is grounded.
-        private Transform m_CeilingCheck;   // A position marking where to check for ceilings
-        const float k_CeilingRadius = .01f; // Radius of the overlap circle to determine if the player can stand up
-        private Animator m_Anim;            // Reference to the player's animator component.
+        private Transform m_GroundCheck;
+        public float k_GroundedRadius = 0.1f;
+        private bool m_Grounded;
+        private Transform m_CeilingCheck;
+        const float k_CeilingRadius = .01f;
+        private Animator m_Anim;
         private Rigidbody2D m_Rigidbody2D;
-        private bool m_FacingRight = true;  // For determining which way the player is currently facing.
+        private bool m_FacingRight = true;
 
         private void Awake()
         {
@@ -29,25 +30,35 @@ namespace UnityStandardAssets._2D
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
         }
 
-
         private void FixedUpdate()
         {
             m_Grounded = false;
 
-            // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
-            // This can be done using layers instead but Sample Assets will not overwrite your project settings.
             Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
             for (int i = 0; i < colliders.Length; i++)
             {
                 if (colliders[i].gameObject != gameObject)
+                {
+                    if (colliders[i].isTrigger)
+                        continue;
+
                     m_Grounded = true;
+                    break;
+                }
             }
+
             m_Anim.SetBool("Ground", m_Grounded);
+
+            m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, Mathf.Min(m_Rigidbody2D.velocity.y, maxVerticalVelocity));
 
             // Set the vertical animation
             m_Anim.SetFloat("vSpeed", m_Rigidbody2D.velocity.y);
         }
 
+        public bool IsOnGround()
+        {
+            return m_Grounded;
+        }
 
         public void Move(float move, bool crouch, bool jump)
         {
@@ -109,6 +120,14 @@ namespace UnityStandardAssets._2D
             Vector3 theScale = transform.localScale;
             theScale.x *= -1;
             transform.localScale = theScale;
+        }
+
+        void OnDrawGizmos()
+        {
+            if (m_GroundCheck == null)
+                return;
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawWireSphere(m_GroundCheck.position, k_GroundedRadius);
         }
     }
 }
