@@ -1,8 +1,9 @@
-using System;
 using UnityEngine;
 
 namespace UnityStandardAssets._2D
 {
+    [RequireComponent(typeof(Animator))]
+    [RequireComponent(typeof(Rigidbody2D))]
     public class PlatformerCharacter2D : MonoBehaviour
     { 
         [SerializeField] private float m_MaxSpeed = 10f;
@@ -26,6 +27,23 @@ namespace UnityStandardAssets._2D
             // Setting up references.
             m_GroundCheck = transform.Find("GroundCheck");
             m_CeilingCheck = transform.Find("CeilingCheck");
+
+            if (m_GroundCheck == null)
+            {
+                GameObject aux = GameObject.FindGameObjectWithTag("GroundCheck");
+
+                if(aux != null)
+                    m_GroundCheck = aux.transform;
+            }
+
+            if (m_CeilingCheck == null)
+            {
+                GameObject aux = GameObject.FindGameObjectWithTag("CeilingCheck");
+
+                if (aux != null)
+                    m_CeilingCheck = aux.transform;
+            }
+
             m_Anim = GetComponent<Animator>();
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
         }
@@ -35,15 +53,21 @@ namespace UnityStandardAssets._2D
             m_Grounded = false;
 
             Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
+
             for (int i = 0; i < colliders.Length; i++)
             {
-                if (colliders[i].gameObject != gameObject)
+                if (colliders[i].gameObject != this.gameObject)
                 {
                     if (colliders[i].isTrigger)
+                    {
                         continue;
+                    }
 
-                    m_Grounded = true;
-                    break;
+                    else
+                    {
+                        m_Grounded = true;
+                        break;
+                    }
                 }
             }
 
@@ -100,6 +124,7 @@ namespace UnityStandardAssets._2D
                     Flip();
                 }
             }
+
             // If the player should jump...
             if (m_Grounded && jump && m_Anim.GetBool("Ground"))
             {
@@ -118,16 +143,34 @@ namespace UnityStandardAssets._2D
 
             // Multiply the player's x local scale by -1.
             Vector3 theScale = transform.localScale;
+
             theScale.x *= -1;
+
             transform.localScale = theScale;
         }
 
         void OnDrawGizmos()
         {
-            if (m_GroundCheck == null)
-                return;
-            Gizmos.color = Color.yellow;
-            Gizmos.DrawWireSphere(m_GroundCheck.position, k_GroundedRadius);
+            if (Debug.isDebugBuild == true)
+            {
+                if (m_GroundCheck == null)
+                    return;
+
+                Gizmos.color = Color.yellow;
+                Gizmos.DrawWireSphere(m_GroundCheck.position, k_GroundedRadius);
+            }
+        }
+
+        public int GetDirection()
+        {
+            int direccion = 0;
+
+            if (m_FacingRight == true)
+                direccion = 1;
+            else
+                direccion = -1;
+
+            return direccion;
         }
     }
 }

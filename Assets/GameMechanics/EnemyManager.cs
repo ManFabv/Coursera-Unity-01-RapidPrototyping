@@ -26,15 +26,21 @@ public class EnemyManager : MonoBehaviour
         for (int i = 0; i < prefabs.Length; i++)
         {
             pool[i] = new Enemy[GameplayConstants.ENEMY_POOL_SIZE];
+
             GameObject poolParent = new GameObject(prefabs[i].name + "_Pool");
+
             poolParent.transform.position = Vector3.zero;
 
             for (int j = 0; j < GameplayConstants.ENEMY_POOL_SIZE; j++)
             {
-                GameObject clone = Instantiate(prefabs[i]);
+                GameObject clone = Instantiate(prefabs[i]) as GameObject;
+
                 clone.transform.parent = poolParent.transform;
+
                 clone.SetActive(false);
+
                 clone.name = prefabs[i].name + "_" + i.ToString();
+
                 pool[i][j] = clone.GetComponent<Enemy>();
             }
         }
@@ -77,16 +83,19 @@ public class EnemyManager : MonoBehaviour
         for (int i = 0; i < GameplayConstants.ENEMY_POOL_SIZE; i++)
         {
             GameObject enemy = pool[randomIndex][i].gameObject;
+
             if (!enemy.activeInHierarchy)
             {
                 enemy.SetActive(true);
+
                 pool[randomIndex][i].Spawn(position);
+
                 return true;
             }
         }
 
-        Debug.LogWarning("No available enemy of type " + pool[randomIndex][0].name);
         ClearCache(pool[randomIndex]);
+
         return false;
     }
 
@@ -97,11 +106,14 @@ public class EnemyManager : MonoBehaviour
         for (int i = 0; i < GameplayConstants.ENEMY_POOL_SIZE; i++)
         {
             float horizontalPosition = pool[i].transform.position.x;
+
             nearest = Mathf.Max(nearest, horizontalPosition);
         }
+
         for (int i = 0; i < GameplayConstants.ENEMY_POOL_SIZE; i++)
         {
             GameObject enemy = pool[i].gameObject;
+
             if (enemy.transform.position.x < nearest)
             {
                 enemy.SetActive(false);

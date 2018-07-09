@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-
 
 namespace UnityStandardAssets._2D
 {
@@ -15,13 +13,14 @@ namespace UnityStandardAssets._2D
 
         private Transform m_Player; // Reference to the player's transform.
 
-
         private void Awake()
         {
             // Setting up the reference.
-            m_Player = GameObject.FindGameObjectWithTag("Player").transform;
-        }
+            GameObject aux_go = GameObject.FindGameObjectWithTag("Player");
 
+            if(aux_go != null)
+                m_Player = aux_go.transform;
+        }
 
         private bool CheckXMargin()
         {
@@ -29,19 +28,16 @@ namespace UnityStandardAssets._2D
             return Mathf.Abs(transform.position.x - m_Player.position.x) > xMargin;
         }
 
-
         private bool CheckYMargin()
         {
             // Returns true if the distance between the camera and the player in the y axis is greater than the y margin.
             return Mathf.Abs(transform.position.y - m_Player.position.y) > yMargin;
         }
 
-
-        private void Update()
+        private void LateUpdate()
         {
             TrackPlayer();
         }
-
 
         private void TrackPlayer()
         {

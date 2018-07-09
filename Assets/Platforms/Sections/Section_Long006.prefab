@@ -25,7 +25,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1182633136328944
 GameObject:
@@ -38,12 +38,12 @@ GameObject:
   - component: {fileID: 212163731739976082}
   - component: {fileID: 114461436691511200}
   - component: {fileID: 61728014316055316}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Platform_rightlow
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1378810069545722
 GameObject:
@@ -56,12 +56,12 @@ GameObject:
   - component: {fileID: 212640113900889446}
   - component: {fileID: 114582013557540814}
   - component: {fileID: 61456388020521428}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Platform_left
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1632856624962600
 GameObject:
@@ -74,12 +74,12 @@ GameObject:
   - component: {fileID: 212015375434501246}
   - component: {fileID: 114857538821473934}
   - component: {fileID: 61135394952370426}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Platform_low
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1904693362823766
 GameObject:
@@ -92,12 +92,12 @@ GameObject:
   - component: {fileID: 212154761906181356}
   - component: {fileID: 114157572175966746}
   - component: {fileID: 61164608719328302}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Platform
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1920714013736930
 GameObject:
@@ -110,12 +110,12 @@ GameObject:
   - component: {fileID: 212569169959187630}
   - component: {fileID: 114884834459895520}
   - component: {fileID: 61418898824434188}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Platform_right
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1961414712870336
 GameObject:
@@ -128,12 +128,12 @@ GameObject:
   - component: {fileID: 212783265812283008}
   - component: {fileID: 114277671708637778}
   - component: {fileID: 61493587183235794}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Platform_far
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4110464513081542
 Transform:
@@ -472,6 +472,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
@@ -516,6 +517,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
@@ -560,6 +562,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
@@ -604,6 +607,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
@@ -648,6 +652,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
@@ -692,6 +697,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:

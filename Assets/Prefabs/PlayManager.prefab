@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1339339442437372}
+  m_IsPrefabParent: 1
+--- !u!1 &1339339442437372
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4647738438221542}
+  - component: {fileID: 114576278627706920}
+  - component: {fileID: 114706469833540114}
+  - component: {fileID: 114525639017189646}
+  m_Layer: 0
+  m_Name: PlayManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4647738438221542
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1339339442437372}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114525639017189646
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1339339442437372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fa1c69fd55b9aa4285d943c0eed2002, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114576278627706920
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1339339442437372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fbc80213d2105e48863c52bee31df35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platformPrefabs:
+  - {fileID: 1675544436486976, guid: b3830f4a80dfae44f87581e973ea0e87, type: 2}
+  - {fileID: 1681150448306808, guid: e6fec5e483fb67640a9f45cc5fe4789e, type: 2}
+  - {fileID: 1198956399872522, guid: 9da8d02d44503c8478d6fcd7d774036f, type: 2}
+  - {fileID: 1874052497992738, guid: 92d468d13782393409f6152a1778c27a, type: 2}
+  - {fileID: 1013595072760344, guid: 80b551c6bb2d60e4c9ca92e619ad01f6, type: 2}
+  - {fileID: 1393571314741044, guid: 2cfd6865455897543b827a4dab3f845d, type: 2}
+  - {fileID: 1740196922561068, guid: 8f6df4b8f13cd6044889e4f15f1ba005, type: 2}
+  - {fileID: 1590485878924988, guid: fb454eb66a277a848abed61a54b677ca, type: 2}
+  - {fileID: 1363849144134662, guid: 6dce9421601275e499fee28c0f329514, type: 2}
+  - {fileID: 1693113409041472, guid: d318b349978e86c41a8287c71abb1c42, type: 2}
+  - {fileID: 1400388028882054, guid: 7e97ae207755aee4889c051375862ea2, type: 2}
+  - {fileID: 1174839690976046, guid: 6db5feef644782a4da80b0bc30e9d92e, type: 2}
+  - {fileID: 1239192382815572, guid: bcc5408362d1425408dfcc8bb3f712bf, type: 2}
+  - {fileID: 1028590970624660, guid: 03bc806fe73b7bc4eb24004f25eddda5, type: 2}
+  - {fileID: 1916568287381560, guid: 5deed9565794bb74fb2b50f1e0188f45, type: 2}
+  - {fileID: 1180784064920016, guid: d61f6cc174e053541a7f78306ae316ec, type: 2}
+  - {fileID: 1200204008843422, guid: 2069a825dd03ffd4aa55a38754d6de54, type: 2}
+  - {fileID: 1553255139050690, guid: 7ea111bf5ea901e4eb4cc7245a46faf2, type: 2}
+  player: {fileID: 0}
+  jumpDistance: 8
+  easyDistanceScale: 0.5
+  hardDistanceScale: 1.75
+  easyDistance: 100
+  hardDistance: 1000
+--- !u!114 &114706469833540114
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1339339442437372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 612f505d2166fb14f9db3f3213b22ed6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundEnemies:
+  - {fileID: 1388540643309766, guid: 2d148715719bf2d418a5ef77a5d2b00c, type: 2}
+  airEnemies:
+  - {fileID: 1043275108669382, guid: d4c5043fcfb24a742a8435cef50bba22, type: 2}

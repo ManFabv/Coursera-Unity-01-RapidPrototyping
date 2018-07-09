@@ -1,5 +1,5 @@
-using System;
 using UnityEngine;
+using System.Collections;
 
 namespace UnityStandardAssets._2D
 {
@@ -18,41 +18,98 @@ namespace UnityStandardAssets._2D
         private Vector3 m_LookAheadPos;
         private float minimumDistance;
 
+        private bool mustFollow = true;
+
         // Use this for initialization
         private void Start()
         {
-            m_LastTargetPosition = target.position;
-            m_OffsetZ = (transform.position - target.position).z;
-            transform.parent = null;
-        }
+            mustFollow = true;
 
-
-        // Update is called once per frame
-        private void Update()
-        {
-            minimumDistance = Mathf.Max(transform.position.x, minimumDistance);
-            // only update lookahead pos if accelerating or changed direction
-            float xMoveDelta = (target.position - m_LastTargetPosition).x;
-
-            bool updateLookAheadTarget = Mathf.Abs(xMoveDelta) > lookAheadMoveThreshold;
-
-            if (updateLookAheadTarget)
+            if(target == null)
             {
-                m_LookAheadPos = lookAheadFactor*Vector3.right*Mathf.Sign(xMoveDelta);
+                GameObject aux_go = GameObject.FindGameObjectWithTag("Player");
+
+                if (aux_go != null)
+                    target = aux_go.transform;
             }
+
+            if (target != null)
+            {
+                m_LastTargetPosition = target.position;
+                m_OffsetZ = (transform.position - target.position).z;
+                transform.parent = null;
+            }
+
             else
             {
-                m_LookAheadPos = Vector3.MoveTowards(m_LookAheadPos, Vector3.zero, Time.deltaTime*lookAheadReturnSpeed);
+                StartCoroutine(DeactivateDelayed());
             }
+        }
 
-            Vector3 aheadTargetPos = target.position + m_LookAheadPos + Vector3.forward*m_OffsetZ;
-            Vector3 newPos = Vector3.SmoothDamp(transform.position, aheadTargetPos, ref m_CurrentVelocity, damping);
-            newPos.x = Mathf.Max(newPos.x, minimumDistance);
-            newPos.y = Mathf.Max(newPos.y, minimumHeight);
+        private IEnumerator DeactivateDelayed()
+        {
+            yield return new WaitForSeconds(0.25f);
 
-            transform.position = newPos;
+            if (this.isActiveAndEnabled == true)
+                this.enabled = false;
 
-            m_LastTargetPosition = target.position;
+            StopAllCoroutines();
+        }
+
+        public void PlayerLostLife()
+        {
+            if(target != null)
+                StartCoroutine(GoToTarget());
+        }
+
+        private IEnumerator GoToTarget()
+        {
+            mustFollow = false;
+
+            yield return new WaitForEndOfFrame();
+
+            this.transform.position = new Vector3(target.position.x, target.position.y, this.transform.position.z);
+
+            yield return new WaitForEndOfFrame();
+
+            mustFollow = true;
+        }
+
+        // Update is called once per frame
+        private void LateUpdate()
+        {
+            if (target == null)
+                return;
+
+            if (mustFollow == true)
+            {
+                minimumDistance = Mathf.Max(transform.position.x, minimumDistance);
+
+                // only update lookahead pos if accelerating or changed direction
+                float xMoveDelta = (target.position - m_LastTargetPosition).x;
+
+                bool updateLookAheadTarget = Mathf.Abs(xMoveDelta) > lookAheadMoveThreshold;
+
+                if (updateLookAheadTarget)
+                {
+                    m_LookAheadPos = lookAheadFactor * Vector3.right * Mathf.Sign(xMoveDelta);
+                }
+
+                else
+                {
+                    m_LookAheadPos = Vector3.MoveTowards(m_LookAheadPos, Vector3.zero, Time.deltaTime * lookAheadReturnSpeed);
+                }
+
+                Vector3 aheadTargetPos = target.position + m_LookAheadPos + Vector3.forward * m_OffsetZ;
+                Vector3 newPos = Vector3.SmoothDamp(transform.position, aheadTargetPos, ref m_CurrentVelocity, damping);
+
+                newPos.x = Mathf.Max(newPos.x, minimumDistance);
+                newPos.y = Mathf.Max(newPos.y, minimumHeight);
+
+                transform.position = newPos;
+
+                m_LastTargetPosition = target.position;
+            }
         }
     }
 }

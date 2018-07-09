@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - KillZone
+  - WakeField
+  - Ground
+  - GroundCheck
+  - CeilingCheck
+  - Camera_Follow
   layers:
   - Default
   - TransparentFX
@@ -13,12 +20,12 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Enemy
+  - Killzone
+  - Player
+  - ScreenMargin
+  - Radar
+  - WakeField
   - 
   - 
   - 

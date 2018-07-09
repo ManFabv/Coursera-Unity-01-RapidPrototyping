@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 
 public class RadarScreen : MonoBehaviour
 {
@@ -7,14 +6,12 @@ public class RadarScreen : MonoBehaviour
     public int boarderSize = 2;
     private RectTransform rTransform;
 
-	// Use this for initialization
 	void Awake ()
     {
         rTransform = this.GetComponent<RectTransform>();
 
         if (rTransform == null)
         {
-            Debug.LogWarning("No radar rect!");
             this.enabled = false;
         }
         else

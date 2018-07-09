@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Text;
+﻿using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(Canvas))]
 public class HUD : MonoBehaviour
 {
     public enum Language
@@ -18,15 +18,34 @@ public class HUD : MonoBehaviour
     private string livesString = "Life: ";
     public Text enemyText;
     private string enemyString = "Foes: ";
-    
+
+    public Canvas canvas;
+
+    private void Awake()
+    {
+        if (scoreText != null)
+            scoreText.text = string.Empty;
+
+        if(livesText != null)
+            livesText.text = string.Empty;
+
+        if(enemyText != null)
+            enemyText.text = string.Empty;
+
+        if(canvas == null)
+            canvas = GameObject.FindObjectOfType<Canvas>();
+    }
+
     private void UpdateText(Text textObj, string words, bool value)
     {
-        textObj.text = Concatenate(words, value);
+        if(textObj != null)
+            textObj.text = Concatenate(words, value);
     }
 
     private string Concatenate(string words, bool value)
     {
         StringBuilder builder = new StringBuilder();
+
         builder.Append(words);
         builder.Append(value);
 
@@ -35,12 +54,14 @@ public class HUD : MonoBehaviour
 
     private void UpdateText(Text textObj, string words, float value)
     {
-        textObj.text = Concatenate(words, value);
+        if (textObj != null)
+            textObj.text = Concatenate(words, value);
     }
 
     private string Concatenate(string words, float value)
     {
         StringBuilder builder = new StringBuilder();
+
         builder.Append(words);
         builder.Append(value);
 
@@ -64,15 +85,27 @@ public class HUD : MonoBehaviour
 
     private void UpdateText(Text textObj, string words, int value)
     {
-        textObj.text = Concatenate(words, value);
+        if (textObj != null)
+            textObj.text = Concatenate(words, value);
     }
 
     private string Concatenate(string words, int value)
     {
         StringBuilder builder = new StringBuilder();
+
         builder.Append(words);
         builder.Append(value);
 
         return builder.ToString();
+    }
+
+    public void GameOver()
+    {
+        if(canvas != null)
+        {
+            LoaderManager.Instance.StartLoader();
+            
+            GameObject.Destroy(canvas.gameObject);
+        }
     }
 }

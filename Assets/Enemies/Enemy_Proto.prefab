@@ -39,7 +39,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4239876378944006}
   - component: {fileID: 212399832601973576}
-  m_Layer: 4
+  m_Layer: 12
   m_Name: Radar_Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,10 +86,10 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 2
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 3
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Material: {fileID: 6200000, guid: 57905587feadc58478b46b9c6e223d56, type: 2}
+  m_Interpolate: 2
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -101,13 +101,13 @@ CircleCollider2D:
   m_GameObject: {fileID: 1043275108669382}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 57905587feadc58478b46b9c6e223d56, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.085
 --- !u!114 &114534829425106826
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -133,6 +133,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
@@ -177,6 +178,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:

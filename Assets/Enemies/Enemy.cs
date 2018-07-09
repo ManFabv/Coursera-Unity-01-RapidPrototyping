@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(CircleCollider2D))]
+[RequireComponent(typeof(SpriteRenderer))]
 public class Enemy : MonoBehaviour
 {
     public int maxHealth = 1;
@@ -24,11 +27,11 @@ public class Enemy : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.tag == GameplayConstants.TAG_KillZone)
+        if (col.tag.CompareTo(GameplayConstants.TAG_KillZone) == 0)
         {
             GoToSleep();
         }
-        else if (col.tag == GameplayConstants.TAG_WakeField)
+        else if (col.tag.CompareTo(GameplayConstants.TAG_WakeField) == 0)
         {
             WakeUp();
         }
@@ -77,7 +80,7 @@ public class Enemy : MonoBehaviour
         else
         {
             SetScaleByHealth(health);
-            StartCoroutine("Invulnerable");
+            StartCoroutine(Invulnerable());
             return 0;
         }
     }
@@ -94,7 +97,7 @@ public class Enemy : MonoBehaviour
         sr.color = Color.black;
         isVulnerable = false;
         rb.velocity = 10f * Vector2.up;
-        StartCoroutine("DelayedDeath");
+        StartCoroutine(DelayedDeath());
     }
 
     internal IEnumerator DelayedDeath()

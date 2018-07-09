@@ -28,8 +28,7 @@ public class PlatformSection : MonoBehaviour
     private bool nextPlatformActivated = false;
 
     private void CalculateWidthFromColliders(BoxCollider2D[] colliders)
-    {
-        
+    {        
         leftOffset = float.MinValue;
         rightOffset = float.MinValue;
 
