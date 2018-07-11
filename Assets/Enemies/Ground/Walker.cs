@@ -26,7 +26,11 @@ public class Walker : Enemy
 
     internal virtual void LookAhead()
     {
-        RaycastHit2D rayHit = Physics2D.Raycast(this.transform.position + GetDirection() * 0.35f * Vector3.right, Vector2.down, 1.5f, mask);
+        this.circleColl.enabled = false; //deactivate collider to avoid self collision
+
+        RaycastHit2D rayHit = Physics2D.Raycast(this.transform.position + GetDirection() * (maxSize+0.2f) * Vector3.right, Vector3.down * (maxSize+0.2f), maxSize*2.0f, mask);
+
+        this.circleColl.enabled = true; //activate again collider
 
         if (rayHit.collider == null)
         {
@@ -36,7 +40,11 @@ public class Walker : Enemy
 
         else
         {
-            rayHit = Physics2D.Raycast(this.transform.position, GetDirection() * Vector3.right, 1f, mask);
+            this.circleColl.enabled = false; //deactivate collider to avoid self collision
+
+            rayHit = Physics2D.Raycast(this.transform.position, GetDirection() * Vector3.right * (maxSize+0.2f), (maxSize+0.2f), mask);
+
+            this.circleColl.enabled = true; //activate again collider
 
             if (rayHit.collider != null)
             {
@@ -54,5 +62,12 @@ public class Walker : Enemy
     internal float GetDirection()
     {
         return (movingRight ? 1f : -1f);
+    }
+
+    internal override void Setup()
+    {
+        base.Setup();
+
+        Physics2D.IgnoreCollision(circleColl, circleColl, true);
     }
 }

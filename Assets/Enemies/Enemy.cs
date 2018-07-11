@@ -15,6 +15,8 @@ public class Enemy : MonoBehaviour
     internal SpriteRenderer sr;
     internal Color originalColor;
 
+    internal float maxSize;
+
     void Awake()
     {
         rb = this.GetComponent<Rigidbody2D>();
@@ -40,6 +42,12 @@ public class Enemy : MonoBehaviour
     internal virtual void Setup()
     {
         // Any additional commands at Awaken.
+        SetupSize();
+    }
+
+    internal void SetupSize()
+    {
+        maxSize = circleColl.radius * transform.localScale.x;
     }
 
     internal virtual void WakeUp()
@@ -67,6 +75,8 @@ public class Enemy : MonoBehaviour
     {
         float healthScalar = GameplayConstants.ENEMY_SCALE * Mathf.Pow(GameplayConstants.HEALTH_SIZE_SCALAR, currentHealth - 1);
         this.transform.localScale =  healthScalar * Vector3.one;
+
+        SetupSize();
     }
     
     public virtual int Squash()

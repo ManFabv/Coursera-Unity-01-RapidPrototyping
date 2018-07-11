@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+[RequireComponent(typeof(EnemyManager))]
 public class PlatformManager : MonoBehaviour
 {
     public GameObject[] platformPrefabs;
@@ -26,7 +27,9 @@ public class PlatformManager : MonoBehaviour
 	void Start ()
     {
         enemyManager = this.GetComponent<EnemyManager>();
+
         InstantiatePlatformSections();
+
         BuildInitialLevel();
 	}
 
@@ -35,13 +38,17 @@ public class PlatformManager : MonoBehaviour
         platformSections = new PlatformSection[platformPrefabs.Length];
 
         GameObject poolParent = new GameObject("Platform_Pool");
+
         poolParent.transform.position = Vector3.zero;
 
         for (int i = 0; i < platformPrefabs.Length; i++)
         {
-            GameObject clone = Instantiate(platformPrefabs[i], 0f * Vector3.left, Quaternion.identity);
+            GameObject clone = Instantiate(platformPrefabs[i], 0f * Vector3.left, Quaternion.identity) as GameObject;
+
             clone.transform.parent = poolParent.transform;
+
             platformSections[i] = clone.GetComponent<PlatformSection>();
+
             platformSections[i].Initialize(this);
             platformSections[i].Deactivate();
         }
@@ -49,9 +56,8 @@ public class PlatformManager : MonoBehaviour
 
     private void BuildInitialLevel()
     {
-        //Debug.Log("BuildInitialLevel");
-
         currentSections = new int[GameplayConstants.MAXIMUM_SECTIONS];
+
         for (int i = 0; i < GameplayConstants.MAXIMUM_SECTIONS - 1; i++)
         {
             AddPlatformSection();
@@ -68,6 +74,7 @@ public class PlatformManager : MonoBehaviour
     private static void WakeActiveEnemies()
     {
         Enemy[] enemies = FindObjectsOfType<Enemy>();
+
         foreach (Enemy obj in enemies)
         {
             if (obj.gameObject.activeInHierarchy)
@@ -79,17 +86,15 @@ public class PlatformManager : MonoBehaviour
 
     public void AddPlatformSection()
     {
-        //Debug.Log("AddPlatformSection");
-
         AdvanceCurrentPlatformCache();
+
         RandomUniquePlatform();
+
         ActivateNewPlatform();
     }
 
     private void AdvanceCurrentPlatformCache()
     {
-        //Debug.Log("AdvanceCurrentPlatformCache");
-
         for (int i = 1; i < GameplayConstants.MAXIMUM_SECTIONS - 1; i++)
         {
             currentSections[i] = currentSections[i + 1];
@@ -98,14 +103,14 @@ public class PlatformManager : MonoBehaviour
 
     private void RandomUniquePlatform()
     {
-        //Debug.Log("RandomUniquePlatform");
-
         bool duplicatePlatformSelected = true;
         int newPlatformIndex = -1;
+
         while (duplicatePlatformSelected)
         {
             newPlatformIndex = Random.Range(0, platformSections.Length);
             duplicatePlatformSelected = false;
+
             for (int i = 0; i < currentSections.Length; i++)
             {
                 if (newPlatformIndex == currentSections[i])
@@ -121,8 +126,6 @@ public class PlatformManager : MonoBehaviour
 
     private void ActivateNewPlatform()
     {
-        //Debug.Log("ActivateNewPlatform");
-
         PlatformSection newPlatform = platformSections[currentSections[GameplayConstants.MAXIMUM_SECTIONS - 1]];
 
         float jumpScalar = GetJumpScalar();
@@ -137,12 +140,14 @@ public class PlatformManager : MonoBehaviour
     {
         float percentAlongScale = Mathf.InverseLerp(easyDistance, hardDistance, player.position.x);
         float difficultyScale = Mathf.Lerp(easyDistanceScale, hardDistanceScale, percentAlongScale);
+
         return difficultyScale;
     }
 
     private void SpawnGroundEnemies(PlatformSection newPlatform)
     {
         Vector3[] enemyPositions = newPlatform.GetEnemySpawnPoints(Random.Range(1, 4));
+
         if (enemyPositions != null)
         {
             for (int i = 0; i < enemyPositions.Length; i++)

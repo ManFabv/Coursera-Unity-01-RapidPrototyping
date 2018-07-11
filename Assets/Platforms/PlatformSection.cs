@@ -71,7 +71,9 @@ public class PlatformSection : MonoBehaviour
             }
 
             rayHit = Physics2D.Raycast(colTop, Vector2.right);
+
             float rightRange = colExtent;
+
             if (rayHit.collider != null)
             {
                 rightRange = Mathf.Min(colExtent, rayHit.distance);
@@ -84,7 +86,9 @@ public class PlatformSection : MonoBehaviour
             }
 
             rayHit = Physics2D.Raycast(colTop, Vector2.left);
+
             float leftRange = colExtent;
+
             if (rayHit.collider != null)
             {
                 leftRange = Mathf.Min(colExtent, rayHit.distance);
@@ -108,6 +112,7 @@ public class PlatformSection : MonoBehaviour
     private void SetTrigger()
     {
         BoxCollider2D coll = this.GetComponent<BoxCollider2D>();
+
         if (coll == null)
         {
             coll = this.gameObject.AddComponent<BoxCollider2D>();
@@ -123,16 +128,19 @@ public class PlatformSection : MonoBehaviour
         pm = platformManager;
 
         BoxCollider2D[] colliders = this.GetComponentsInChildren<BoxCollider2D>();
+
         CalculateWidthFromColliders(colliders);
         CalculateSpawnPoints(colliders);
+
         SetTrigger();
     }
 
     void OnTriggerEnter2D(Collider2D coll)
     {
-        if (!nextPlatformActivated && coll.tag == GameplayConstants.TAG_Player)
+        if (!nextPlatformActivated && coll.tag.CompareTo(GameplayConstants.TAG_Player) == 0)
         {
             nextPlatformActivated = true;
+
             pm.AddPlatformSection();
         }
     }
@@ -140,8 +148,10 @@ public class PlatformSection : MonoBehaviour
     public float MoveAndActivate(float horizontalDistance)
     {
         float center = horizontalDistance + leftOffset;
+
         this.transform.position = center * Vector3.right;
         this.gameObject.SetActive(true);
+
         nextPlatformActivated = false;
 
         return center + rightOffset;

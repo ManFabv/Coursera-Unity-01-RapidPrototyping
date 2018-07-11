@@ -99,13 +99,33 @@ public class PlayerCharacter : MonoBehaviour
     {
         if (col.gameObject.tag.CompareTo(GameplayConstants.TAG_Ground) == 0)
         {
-            Vector2 posCol = col.transform.position;
+            RectTransform rect_aux = col.gameObject.GetComponent<RectTransform>();
 
-            Collider2D col_aux = col.gameObject.GetComponent<Collider2D>();
+            if (rect_aux != null)
+            {
+                Vector2 posCol = col.transform.position;
 
-            float alturaPlataforma = col_aux.bounds.size.y;
-            
-            spawnPosition = new Vector2(posCol.x, posCol.y + alturaPlataforma);
+                posCol.y += rect_aux.rect.yMin;
+
+                spawnPosition = new Vector2(posCol.x, posCol.y + GameplayConstants.SPAWN_POS_Y_MULTIPLIER);
+            }
+
+            else
+            {
+                Vector2 posCol = col.transform.position;
+
+                Collider2D col_aux = col.gameObject.GetComponent<Collider2D>();
+
+                if (col_aux != null)
+                {
+                    float alturaPlataforma = col_aux.bounds.size.y;
+
+                    spawnPosition = new Vector2(posCol.x, posCol.y + alturaPlataforma);
+                }
+
+                else
+                    spawnPosition = posCol;
+            }
         }
     }
 
