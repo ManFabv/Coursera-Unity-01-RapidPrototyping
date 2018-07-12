@@ -21,7 +21,7 @@ public class ManageMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag.CompareTo(GameplayConstants.TAG_Ground) == 0 || collision.gameObject.layer == GameplayConstants.LAYER_CAMERA_MARGIN)
+        if (collision.tag.CompareTo(GameplayConstants.TAG_Ground) == 0)
         {
             if (userControl != null)
                 userControl.CanMoveForward = false;

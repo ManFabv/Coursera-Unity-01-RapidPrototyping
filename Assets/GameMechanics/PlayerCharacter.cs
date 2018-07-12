@@ -27,8 +27,14 @@ public class PlayerCharacter : MonoBehaviour
 
     public Camera2DFollow cameraFollow;
 
+    private float maxSize;
+
+    private SpriteRenderer sr;
+
     private void Awake()
     {
+        sr = this.GetComponent<SpriteRenderer>();
+
         localTransform = this.GetComponent<Transform>();
 
         rb = this.GetComponent<Rigidbody2D>();
@@ -39,6 +45,8 @@ public class PlayerCharacter : MonoBehaviour
 
         if (cameraFollow == null)
             cameraFollow = GameObject.FindObjectOfType<Camera2DFollow>();
+
+        maxSize = sr.bounds.max.x;
     }
 
     void Start ()
@@ -105,6 +113,13 @@ public class PlayerCharacter : MonoBehaviour
             {
                 Vector2 posCol = col.transform.position;
 
+                if (cameraFollow != null)
+                {
+                    float screenLeftMargin = cameraFollow.MinimumDistance;
+
+                    posCol.x = Mathf.Max(posCol.x, screenLeftMargin) + maxSize;
+                }
+                
                 posCol.y += rect_aux.rect.yMin;
 
                 spawnPosition = new Vector2(posCol.x, posCol.y + GameplayConstants.SPAWN_POS_Y_MULTIPLIER);

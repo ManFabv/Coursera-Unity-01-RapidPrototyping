@@ -20,6 +20,16 @@ namespace UnityStandardAssets._2D
 
         private bool mustFollow = true;
 
+        public float MinimumDistance
+        {
+            get
+            {
+                minimumDistance = Mathf.Max(transform.position.x, minimumDistance);
+
+                return minimumDistance;
+            }
+        }
+
         // Use this for initialization
         private void Start()
         {
@@ -67,8 +77,12 @@ namespace UnityStandardAssets._2D
             mustFollow = false;
 
             yield return new WaitForEndOfFrame();
+            yield return new WaitForEndOfFrame();
+            yield return new WaitForEndOfFrame();
 
             this.transform.position = new Vector3(target.position.x, target.position.y, this.transform.position.z);
+
+            minimumDistance = this.transform.position.x;
 
             yield return new WaitForEndOfFrame();
 
