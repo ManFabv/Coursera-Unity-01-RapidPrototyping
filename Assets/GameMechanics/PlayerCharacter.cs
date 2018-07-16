@@ -47,6 +47,8 @@ public class PlayerCharacter : MonoBehaviour
             cameraFollow = GameObject.FindObjectOfType<Camera2DFollow>();
 
         maxSize = sr.bounds.max.x;
+
+        rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
     }
 
     void Start ()

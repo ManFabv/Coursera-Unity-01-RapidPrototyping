@@ -35,7 +35,6 @@ public class RadarCamera : MonoBehaviour
         StopAllCoroutines();
     }
 
-    // Update is called once per frame
     void LateUpdate ()
     {
         if (followCamera == null)

@@ -43,6 +43,8 @@ public class Enemy : MonoBehaviour
     {
         // Any additional commands at Awaken.
         SetupSize();
+
+        rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
     }
 
     internal void SetupSize()
@@ -53,10 +55,12 @@ public class Enemy : MonoBehaviour
     internal virtual void WakeUp()
     {
         isVulnerable = true;
+        rb.WakeUp();
     }
 
     internal virtual void GoToSleep()
     {
+        rb.Sleep();
         this.gameObject.SetActive(false);
     }
 
