@@ -110,8 +110,8 @@ PlayerSettings:
   videoMemoryForVertexBuffers: 0
   psp2PowerMode: 0
   psp2AcquireBGM: 1
-  vulkanEnableSetSRGBWrite: 1
-  vulkanUseSWCommandBuffers: 1
+  vulkanEnableSetSRGBWrite: 0
+  vulkanUseSWCommandBuffers: 0
   m_SupportedAspectRatios:
     4:3: 0
     5:4: 0
@@ -151,7 +151,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.lateam.test
+    Android: com.coursera.rapidprototyping
     Standalone: com.coursera.rapidprototyping
     iOS: com.coursera.rapidprototyping
     tvOS: com.coursera.rapidprototyping

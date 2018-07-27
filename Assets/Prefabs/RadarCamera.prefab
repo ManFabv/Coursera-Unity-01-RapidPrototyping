@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 20295981147444392}
   - component: {fileID: 114788461280411408}
   - component: {fileID: 61302535878161124}
+  - component: {fileID: 114995602817005612}
   m_Layer: 1
   m_Name: RadarCamera
   m_TagString: Untagged
@@ -121,3 +122,18 @@ MonoBehaviour:
   followCamera: {fileID: 0}
   horizontalOffset: 14
   verticalOverride: 8.5
+--- !u!114 &114995602817005612
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1417368460109926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba6af5eaa8d821f4e93093fd37ee3484, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderShadows: 0
+  requiresDepthTexture: 0
+  requiresColorTexture: 0
+  m_Version: 1
