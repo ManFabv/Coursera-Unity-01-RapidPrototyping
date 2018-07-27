@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 20295981147444392}
   - component: {fileID: 114788461280411408}
   - component: {fileID: 61302535878161124}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: RadarCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,8 +50,8 @@ Camera:
   m_GameObject: {fileID: 1417368460109926}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 4
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.6886792, g: 0.6529459, b: 0.6529459, a: 1}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -79,7 +79,7 @@ Camera:
   m_AllowMSAA: 0
   m_AllowDynamicResolution: 1
   m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
+  m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
 --- !u!61 &61302535878161124
