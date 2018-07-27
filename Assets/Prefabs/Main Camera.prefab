@@ -36,7 +36,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4579641320565196}
   - component: {fileID: 20199657974199054}
-  - component: {fileID: 124158353790258280}
   - component: {fileID: 81946398713045954}
   - component: {fileID: 114459029695958808}
   - component: {fileID: 61444420492027634}
@@ -102,14 +101,14 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294962639
+    m_Bits: 9473
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
   m_AllowMSAA: 0
-  m_AllowDynamicResolution: 0
+  m_AllowDynamicResolution: 1
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -188,10 +187,3 @@ MonoBehaviour:
   lookAheadReturnSpeed: 0.5
   lookAheadMoveThreshold: 0.1
   minimumHeight: -4
---- !u!124 &124158353790258280
-Behaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1725543065911834}
-  m_Enabled: 1
