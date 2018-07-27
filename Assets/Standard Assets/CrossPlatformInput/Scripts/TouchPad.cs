@@ -1,4 +1,5 @@
-using System;
+#pragma warning disable 0169
+
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
