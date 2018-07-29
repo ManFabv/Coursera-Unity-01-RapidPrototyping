@@ -10,8 +10,11 @@ public class EnemyManager : MonoBehaviour
 
     void Awake()
     {
-        groundPool = FillPool(groundEnemies);
-        airPool = FillPool(airEnemies);
+        if(groundEnemies != null && groundEnemies.Length > 0)
+            groundPool = FillPool(groundEnemies);
+
+        if(airEnemies != null && airEnemies.Length > 0)
+            airPool = FillPool(airEnemies);
     }
 
     /// <summary>
@@ -78,46 +81,88 @@ public class EnemyManager : MonoBehaviour
     /// <returns>success of spawning.</returns>
     private bool SpawnFromPool(Vector3 position, Enemy[][] pool)
     {
+        if (pool == null || pool.Length == 0)
+            return false;
+        
         int randomIndex = Random.Range(0, pool.Length);
 
         for (int i = 0; i < GameplayConstants.ENEMY_POOL_SIZE; i++)
         {
-            GameObject enemy = pool[randomIndex][i].gameObject;
-
-            if (!enemy.activeInHierarchy)
+            try
             {
-                enemy.SetActive(true);
+                GameObject enemy = pool[randomIndex][i].gameObject;
 
-                pool[randomIndex][i].Spawn(position);
+                if (!enemy.activeInHierarchy)
+                {
+                    enemy.SetActive(true);
 
-                return true;
+                    pool[randomIndex][i].Spawn(position);
+
+                    return true;
+                }
+            }
+
+            catch(System.IndexOutOfRangeException e)
+            {
+                Debug.Log("Error = " + e.Message);
+                continue;
+            }
+
+            catch (System.ArgumentOutOfRangeException e)
+            {
+                Debug.Log("Error = " + e.Message);
+                continue;
             }
         }
 
-        ClearCache(pool[randomIndex]);
+        try
+        {
+            ClearCache(pool[randomIndex]);
+        }
+
+        catch (System.IndexOutOfRangeException e)
+        {
+            Debug.Log("Error = " + e.Message);
+        }
+
+        catch (System.ArgumentOutOfRangeException e)
+        {
+            Debug.Log("Error = " + e.Message);
+        }
 
         return false;
     }
 
     private void ClearCache(Enemy[] pool)
     {
-        float nearest = float.MinValue;
-
-        for (int i = 0; i < GameplayConstants.ENEMY_POOL_SIZE; i++)
+        if (pool == null || pool.Length == 0)
+            return;
+        
+        try
         {
-            float horizontalPosition = pool[i].transform.position.x;
+            float nearest = float.MinValue;
 
-            nearest = Mathf.Max(nearest, horizontalPosition);
+            for (int i = 0; i < GameplayConstants.ENEMY_POOL_SIZE; i++)
+            {
+                float horizontalPosition = pool[i].transform.position.x;
+
+                nearest = Mathf.Max(nearest, horizontalPosition);
+            }
+
+            for (int i = 0; i < GameplayConstants.ENEMY_POOL_SIZE; i++)
+            {
+                GameObject enemy = pool[i].gameObject;
+
+                if (enemy.transform.position.x < nearest)
+                {
+                    enemy.SetActive(false);
+                }
+            }
         }
 
-        for (int i = 0; i < GameplayConstants.ENEMY_POOL_SIZE; i++)
+        catch
         {
-            GameObject enemy = pool[i].gameObject;
-
-            if (enemy.transform.position.x < nearest)
-            {
-                enemy.SetActive(false);
-            }
+            Debug.Log("SKIPING...");
         }
     }
 }

@@ -23,8 +23,6 @@ public class PlayerCharacter : MonoBehaviour
 
     private GameObject targetFollow;
 
-    private ManageMovement manageMovement;
-
     public Camera2DFollow cameraFollow;
 
     private float maxSize;
@@ -38,8 +36,6 @@ public class PlayerCharacter : MonoBehaviour
         localTransform = this.GetComponent<Transform>();
 
         rb = this.GetComponent<Rigidbody2D>();
-
-        manageMovement = this.GetComponentInChildren<ManageMovement>();
 
         targetFollow = GameObject.FindGameObjectWithTag(GameplayConstants.TAG_CAMERA_FOLLOW);
 
@@ -184,9 +180,6 @@ public class PlayerCharacter : MonoBehaviour
         rb.isKinematic = true;
 
         rb.velocity = Vector2.zero;
-
-        if (manageMovement != null)
-            manageMovement.GameOver();
 
         if (hud != null)
             hud.GameOver();

@@ -2,7 +2,7 @@
 
 public class GameplayConstants : ScriptableObject
 {
-    public const float ENEMY_SCALE = 6f;
+    public const float ENEMY_SCALE = 8f;
     public const float GRAVITY_SCALE = 3f;
     public const float HEALTH_SIZE_SCALAR = 1.35f;
     public const float RESPAWN_HEIGHT = 32f;

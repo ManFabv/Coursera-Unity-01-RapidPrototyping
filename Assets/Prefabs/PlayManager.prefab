@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114706469833540114}
   - component: {fileID: 114525639017189646}
   - component: {fileID: 114384481250971956}
+  - component: {fileID: 114348818609119182}
   m_Layer: 0
   m_Name: PlayManager
   m_TagString: Untagged
@@ -43,6 +44,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114348818609119182
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1339339442437372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39f7bb94c5b054a86be656fe4e3a4c90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114384481250971956
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -115,5 +127,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundEnemies:
   - {fileID: 1388540643309766, guid: 2d148715719bf2d418a5ef77a5d2b00c, type: 2}
-  airEnemies:
-  - {fileID: 1043275108669382, guid: d4c5043fcfb24a742a8435cef50bba22, type: 2}
+  airEnemies: []
