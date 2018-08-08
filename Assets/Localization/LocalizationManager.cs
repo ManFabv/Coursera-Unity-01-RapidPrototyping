@@ -42,7 +42,6 @@ public class LocalizationManager : MonoBehaviour
     private void SetLocalization()
     {
         Debug.LogError("SET LOCALIZATION");
-
         localizationLists = new Dictionary<string, LocalizationLanguage>();
 
 
