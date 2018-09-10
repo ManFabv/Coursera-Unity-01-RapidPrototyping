@@ -2,43 +2,43 @@
 -target:library
 -nowarn:0169
 -langversion:7
--out:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Temp/Assembly-CSharp.dll"
+-out:C:/Source/_Rapid_Prototyping/RapidPrototyping/Temp/Assembly-CSharp.dll
 -nostdlib
 -unsafe
--r:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll"
--r:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Library/ScriptAssemblies/Unity.2D.PixelPerfect.Editor.dll"
--r:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Library/ScriptAssemblies/Unity.Entities.Properties.dll"
--r:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Library/ScriptAssemblies/Unity.Properties.Codegen.dll"
--r:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Library/ScriptAssemblies/Unity.Jobs.dll"
--r:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Library/ScriptAssemblies/Unity.Jobs.Editor.dll"
--r:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Library/ScriptAssemblies/Unity.Entities.Editor.dll"
--r:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll"
--r:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Library/ScriptAssemblies/Unity.Properties.dll"
--r:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Library/ScriptAssemblies/Unity.Collections.dll"
--r:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll"
--r:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll"
--r:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll"
--r:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Library/ScriptAssemblies/Unity.Burst.dll"
--r:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Library/ScriptAssemblies/Unity.RenderPipelines.Lightweight.Runtime.dll"
--r:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Library/ScriptAssemblies/Unity.RenderPipelines.Lightweight.Editor.dll"
--r:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll"
--r:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Library/ScriptAssemblies/Unity.Rendering.Hybrid.dll"
--r:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Library/ScriptAssemblies/Unity.RenderPipelines.HighDefinition.Runtime.dll"
--r:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll"
--r:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Library/ScriptAssemblies/Unity.Properties.Editor.dll"
--r:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Library/ScriptAssemblies/Unity.AssetBundleBrowser.Editor.dll"
--r:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Library/ScriptAssemblies/Unity.Entities.Hybrid.dll"
--r:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Library/ScriptAssemblies/Unity.Mathematics.dll"
--r:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll"
--r:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Library/ScriptAssemblies/Unity.Entities.dll"
--r:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Library/ScriptAssemblies/Unity.Transforms.dll"
--r:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Library/ScriptAssemblies/Unity.2D.PixelPerfect.dll"
--r:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll"
--r:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Library/ScriptAssemblies/Unity.Burst.Editor.dll"
--r:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Library/ScriptAssemblies/Unity.RenderPipelines.HighDefinition.Editor.dll"
--r:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Library/ScriptAssemblies/Unity.TextMeshPro.dll"
--r:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Library/ScriptAssemblies/Unity.RenderPipelines.Core.IncludePaths.dll"
--r:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Library/ScriptAssemblies/Unity.Transforms.Hybrid.dll"
+-r:C:/Source/_Rapid_Prototyping/RapidPrototyping/Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll
+-r:C:/Source/_Rapid_Prototyping/RapidPrototyping/Library/ScriptAssemblies/Unity.2D.PixelPerfect.Editor.dll
+-r:C:/Source/_Rapid_Prototyping/RapidPrototyping/Library/ScriptAssemblies/Unity.Entities.Properties.dll
+-r:C:/Source/_Rapid_Prototyping/RapidPrototyping/Library/ScriptAssemblies/Unity.Properties.Codegen.dll
+-r:C:/Source/_Rapid_Prototyping/RapidPrototyping/Library/ScriptAssemblies/Unity.Jobs.dll
+-r:C:/Source/_Rapid_Prototyping/RapidPrototyping/Library/ScriptAssemblies/Unity.Jobs.Editor.dll
+-r:C:/Source/_Rapid_Prototyping/RapidPrototyping/Library/ScriptAssemblies/Unity.Entities.Editor.dll
+-r:C:/Source/_Rapid_Prototyping/RapidPrototyping/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll
+-r:C:/Source/_Rapid_Prototyping/RapidPrototyping/Library/ScriptAssemblies/Unity.Properties.dll
+-r:C:/Source/_Rapid_Prototyping/RapidPrototyping/Library/ScriptAssemblies/Unity.Collections.dll
+-r:C:/Source/_Rapid_Prototyping/RapidPrototyping/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll
+-r:C:/Source/_Rapid_Prototyping/RapidPrototyping/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll
+-r:C:/Source/_Rapid_Prototyping/RapidPrototyping/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll
+-r:C:/Source/_Rapid_Prototyping/RapidPrototyping/Library/ScriptAssemblies/Unity.Burst.dll
+-r:C:/Source/_Rapid_Prototyping/RapidPrototyping/Library/ScriptAssemblies/Unity.RenderPipelines.Lightweight.Runtime.dll
+-r:C:/Source/_Rapid_Prototyping/RapidPrototyping/Library/ScriptAssemblies/Unity.RenderPipelines.Lightweight.Editor.dll
+-r:C:/Source/_Rapid_Prototyping/RapidPrototyping/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll
+-r:C:/Source/_Rapid_Prototyping/RapidPrototyping/Library/ScriptAssemblies/Unity.Rendering.Hybrid.dll
+-r:C:/Source/_Rapid_Prototyping/RapidPrototyping/Library/ScriptAssemblies/Unity.RenderPipelines.HighDefinition.Runtime.dll
+-r:C:/Source/_Rapid_Prototyping/RapidPrototyping/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll
+-r:C:/Source/_Rapid_Prototyping/RapidPrototyping/Library/ScriptAssemblies/Unity.Properties.Editor.dll
+-r:C:/Source/_Rapid_Prototyping/RapidPrototyping/Library/ScriptAssemblies/Unity.AssetBundleBrowser.Editor.dll
+-r:C:/Source/_Rapid_Prototyping/RapidPrototyping/Library/ScriptAssemblies/Unity.Entities.Hybrid.dll
+-r:C:/Source/_Rapid_Prototyping/RapidPrototyping/Library/ScriptAssemblies/Unity.Mathematics.dll
+-r:C:/Source/_Rapid_Prototyping/RapidPrototyping/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll
+-r:C:/Source/_Rapid_Prototyping/RapidPrototyping/Library/ScriptAssemblies/Unity.Entities.dll
+-r:C:/Source/_Rapid_Prototyping/RapidPrototyping/Library/ScriptAssemblies/Unity.Transforms.dll
+-r:C:/Source/_Rapid_Prototyping/RapidPrototyping/Library/ScriptAssemblies/Unity.2D.PixelPerfect.dll
+-r:C:/Source/_Rapid_Prototyping/RapidPrototyping/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll
+-r:C:/Source/_Rapid_Prototyping/RapidPrototyping/Library/ScriptAssemblies/Unity.Burst.Editor.dll
+-r:C:/Source/_Rapid_Prototyping/RapidPrototyping/Library/ScriptAssemblies/Unity.RenderPipelines.HighDefinition.Editor.dll
+-r:C:/Source/_Rapid_Prototyping/RapidPrototyping/Library/ScriptAssemblies/Unity.TextMeshPro.dll
+-r:C:/Source/_Rapid_Prototyping/RapidPrototyping/Library/ScriptAssemblies/Unity.RenderPipelines.Core.IncludePaths.dll
+-r:C:/Source/_Rapid_Prototyping/RapidPrototyping/Library/ScriptAssemblies/Unity.Transforms.Hybrid.dll
 -r:"C:\Program Files\Unity\Hub\Editor\2018.2.7f1\Editor\Data\Managed/UnityEngine/UnityEngine.dll"
 -r:"C:\Program Files\Unity\Hub\Editor\2018.2.7f1\Editor\Data\Managed/UnityEngine/UnityEngine.AIModule.dll"
 -r:"C:\Program Files\Unity\Hub\Editor\2018.2.7f1\Editor\Data\Managed/UnityEngine/UnityEngine.ARModule.dll"
@@ -101,7 +101,7 @@
 -r:"C:\Program Files\Unity\Hub\Editor\2018.2.7f1\Editor\Data\Managed/UnityEngine/UnityEngine.XRModule.dll"
 -r:"C:\Program Files\Unity\Hub\Editor\2018.2.7f1\Editor\Data\Managed/UnityEditor.dll"
 -r:"C:\Program Files\Unity\Hub\Editor\2018.2.7f1\Editor\Data\Managed/Unity.Locator.dll"
--r:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Library/FacebookSDK/Facebook.Unity.Settings.dll"
+-r:C:/Source/_Rapid_Prototyping/RapidPrototyping/Library/FacebookSDK/Facebook.Unity.Settings.dll
 -r:"C:/Program Files/Unity/Hub/Editor/2018.2.7f1/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2018.2.7f1/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2018.2.7f1/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll"
@@ -328,20 +328,20 @@
 -d:UNITY_TEAM_LICENSE
 -d:UNITY_POST_PROCESSING_STACK_V2
 -d:CROSS_PLATFORM_INPUT
--i:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Assets/Enemies/Enemy.cs"
--i:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Assets/Enemies/Ground/Walker.cs"
--i:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Assets/GameMechanics/EnemyManager.cs"
--i:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Assets/GameMechanics/GameManager.cs"
--i:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Assets/GameMechanics/GameplayConstants.cs"
--i:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Assets/GameMechanics/HUD.cs"
--i:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Assets/GameMechanics/HUD_GAMEOVER.cs"
--i:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Assets/GameMechanics/KillZone.cs"
--i:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Assets/GameMechanics/LoaderManager.cs"
--i:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Assets/GameMechanics/PlatformManager.cs"
--i:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Assets/GameMechanics/PlayerCharacter.cs"
--i:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Assets/GameMechanics/RadarCamera.cs"
--i:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Assets/GameMechanics/RadarScreen.cs"
--i:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Assets/Localization/LocalizationManager.cs"
--i:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Assets/Platforms/Platform.cs"
--i:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Assets/Platforms/PlatformSection.cs"
+-i:C:/Source/_Rapid_Prototyping/RapidPrototyping/Assets/Enemies/Enemy.cs
+-i:C:/Source/_Rapid_Prototyping/RapidPrototyping/Assets/Enemies/Ground/Walker.cs
+-i:C:/Source/_Rapid_Prototyping/RapidPrototyping/Assets/GameMechanics/EnemyManager.cs
+-i:C:/Source/_Rapid_Prototyping/RapidPrototyping/Assets/GameMechanics/GameManager.cs
+-i:C:/Source/_Rapid_Prototyping/RapidPrototyping/Assets/GameMechanics/GameplayConstants.cs
+-i:C:/Source/_Rapid_Prototyping/RapidPrototyping/Assets/GameMechanics/HUD.cs
+-i:C:/Source/_Rapid_Prototyping/RapidPrototyping/Assets/GameMechanics/HUD_GAMEOVER.cs
+-i:C:/Source/_Rapid_Prototyping/RapidPrototyping/Assets/GameMechanics/KillZone.cs
+-i:C:/Source/_Rapid_Prototyping/RapidPrototyping/Assets/GameMechanics/LoaderManager.cs
+-i:C:/Source/_Rapid_Prototyping/RapidPrototyping/Assets/GameMechanics/PlatformManager.cs
+-i:C:/Source/_Rapid_Prototyping/RapidPrototyping/Assets/GameMechanics/PlayerCharacter.cs
+-i:C:/Source/_Rapid_Prototyping/RapidPrototyping/Assets/GameMechanics/RadarCamera.cs
+-i:C:/Source/_Rapid_Prototyping/RapidPrototyping/Assets/GameMechanics/RadarScreen.cs
+-i:C:/Source/_Rapid_Prototyping/RapidPrototyping/Assets/Localization/LocalizationManager.cs
+-i:C:/Source/_Rapid_Prototyping/RapidPrototyping/Assets/Platforms/Platform.cs
+-i:C:/Source/_Rapid_Prototyping/RapidPrototyping/Assets/Platforms/PlatformSection.cs
 -v:0

@@ -2,11 +2,11 @@
 -target:library
 -nowarn:0169
 -langversion:7
--out:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Temp/Unity.RenderPipelines.HighDefinition.Runtime.dll"
+-out:C:/Source/_Rapid_Prototyping/RapidPrototyping/Temp/Unity.RenderPipelines.HighDefinition.Runtime.dll
 -nostdlib
 -unsafe
--r:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll"
--r:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll"
+-r:C:/Source/_Rapid_Prototyping/RapidPrototyping/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll
+-r:C:/Source/_Rapid_Prototyping/RapidPrototyping/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll
 -r:"C:\Program Files\Unity\Hub\Editor\2018.2.7f1\Editor\Data\Managed/UnityEngine/UnityEngine.dll"
 -r:"C:\Program Files\Unity\Hub\Editor\2018.2.7f1\Editor\Data\Managed/UnityEngine/UnityEngine.AIModule.dll"
 -r:"C:\Program Files\Unity\Hub\Editor\2018.2.7f1\Editor\Data\Managed/UnityEngine/UnityEngine.ARModule.dll"
@@ -69,7 +69,7 @@
 -r:"C:\Program Files\Unity\Hub\Editor\2018.2.7f1\Editor\Data\Managed/UnityEngine/UnityEngine.XRModule.dll"
 -r:"C:\Program Files\Unity\Hub\Editor\2018.2.7f1\Editor\Data\Managed/UnityEditor.dll"
 -r:"C:\Program Files\Unity\Hub\Editor\2018.2.7f1\Editor\Data\Managed/Unity.Locator.dll"
--r:"C:/Users/Fabricio Manrique/01_Rapid_Prototyping/FinalProj/RapidPrototyping/Library/FacebookSDK/Facebook.Unity.Settings.dll"
+-r:C:/Source/_Rapid_Prototyping/RapidPrototyping/Library/FacebookSDK/Facebook.Unity.Settings.dll
 -r:"C:/Program Files/Unity/Hub/Editor/2018.2.7f1/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2018.2.7f1/Editor/Data/UnityExtensions/Unity/GUISystem/Editor/UnityEditor.UI.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2018.2.7f1/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll"
